@@ -11,6 +11,10 @@ const gameDisplay = (() => {
 	};
 })();
 
+// This sets up the game -- a few things are in the global scope:
+let turn;
+gameDisplay.tMessage.innerText = 'Hey "X!" You are up first.';
+
 // factoryFunction for the two players
 const playerFactory = (symbol) => {
 	const makeMove = (arrayIndex) => {
@@ -22,8 +26,6 @@ const playerFactory = (symbol) => {
 
 //I create players as an array, like Roman did:
 const playerArray = [playerFactory('X'), playerFactory('O')];
-
-let turn;
 
 // What I need (for instance): playerArray[1].makeMove(2)
 
@@ -45,11 +47,11 @@ const roundElements = (() => {
 		fieldToDisplay.classList.add('disabled');
 	};
 
-	function checkForWin(tField, fieldIndex1, fieldIndex2, fieldIndex3) {
+	function checkForWin(location, fieldIndex1, fieldIndex2, fieldIndex3) {
 		if (
-			gameDisplay.tField[fieldIndex1] !== '' &&
-			gameDisplay.tField[fieldIndex2] !== '' &&
-			gameDisplay.tField[fieldIndex3] !== ''
+			location[fieldIndex1] !== '' &&
+			location[fieldIndex2] !== '' &&
+			location[fieldIndex3] !== ''
 		) {
 			if (
 				gameDisplay.tField[fieldIndex1] ==
@@ -115,61 +117,3 @@ function ticTacToe(gameArrayIndex) {
 	}
 	gameDisplay.tMessage.innerText = `${turn ? 'O' : 'X'}, make your move!`;
 }
-
-/// OLD CODE!
-
-// gameArray[0] !== '' &&
-// gameArray[1] !== '' &&
-// gameArray[2] !== '' &&
-// gameArray[3] !== '' &&
-// gameArray[4] !== '' &&
-// gameArray[5] !== '' &&
-// gameArray[6] !== '' &&
-// gameArray[7] !== '' &&
-// gameArray[8] !== ''
-
-// checkForWin(gameArray, 0, 1, 2);
-// checkForWin(gameArray, 3, 4, 5);
-// checkForWin(gameArray, 6, 7, 8);
-// checkForWin(gameArray, 0, 3, 6);
-// checkForWin(gameArray, 1, 4, 7);
-// checkForWin(gameArray, 2, 5, 8);
-// checkForWin(gameArray, 0, 4, 8);
-// checkForWin(gameArray, 6, 4, 2);
-
-// const field0 = document.querySelector('#index-0');
-// field0.innerText = gameArray[0];
-// const field1 = document.querySelector('#index-1');
-// field1.innerText = gameArray[1];
-// const field2 = document.querySelector('#index-2');
-// field2.innerText = gameArray[2];
-// const field3 = document.querySelector('#index-3');
-// field3.innerText = gameArray[3];
-// const field4 = document.querySelector('#index-4');
-// field4.innerText = gameArray[4];
-// const field5 = document.querySelector('#index-5');
-// field5.innerText = gameArray[5];
-// const field6 = document.querySelector('#index-6');
-// field6.innerText = gameArray[6];
-// const field7 = document.querySelector('#index-7');
-// field7.innerText = gameArray[7];
-// const field8 = document.querySelector('#index-8');
-// field8.innerText = gameArray[8];
-
-// function makeMove(arrayIndex, value) {
-// 	gameArray[arrayIndex] = value;
-// 	// + add an inactive class to the position!
-// }
-
-// alternateTurns(makeMove(4, 'o'));
-
-// Potential series of events:
-// makeMove(0, 'x');
-// makeMove(4, 'o');
-// makeMove(8, 'x');
-// makeMove(2, 'o');
-// makeMove(6, 'x');
-// makeMove(3, 'o');
-// makeMove(7, 'x');
-
-// console.log(gameArray);
