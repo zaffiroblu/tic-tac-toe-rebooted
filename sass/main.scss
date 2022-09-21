@@ -11,19 +11,32 @@ body {
 	align-items: center;
 	height: 100vh;
 }
+.top-area {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 33vh;
+	width: auto;
+}
 
 .game-message-display {
 	display: flex;
 	text-align: center;
-	margin: 5%;
-	height: 150px;
+	padding-top: 3%;
 }
 
 .game-shell {
 	display: flex;
 	flex-direction: column;
-	height: 100%;
+	height: 33vh;
 	width: auto;
+}
+
+.game-message-display2 {
+	display: flex;
+	text-align: flex-start;
+	height: 25vh;
 }
 
 .disabled {
@@ -31,8 +44,12 @@ body {
 }
 
 .size-col {
-	height: 50px;
-	width: 50px;
+	height: 75px;
+	width: 75px;
+}
+
+.size-text {
+	font-size: 2.8em;
 }
 
 .border-r-b {

@@ -13,7 +13,7 @@ const gameDisplay = (() => {
 
 // This sets up the game -- a few things are in the global scope:
 let turn;
-gameDisplay.tMessage.innerText = 'Hey "X!" You are up first.';
+gameDisplay.tMessage.innerText = "Hey player X! You're up first.";
 
 // factoryFunction for the two players
 const playerFactory = (symbol) => {
@@ -59,7 +59,7 @@ const roundElements = (() => {
 				gameDisplay.tField[fieldIndex2] ==
 					gameDisplay.tField[fieldIndex3]
 			) {
-				gameDisplay.tMessage.innerText = `Player "${gameDisplay.tField[fieldIndex1]}" wins!`;
+				gameDisplay.tMessage.innerText = `Player ${gameDisplay.tField[fieldIndex1]} wins!`;
 				return true;
 			}
 		}
@@ -113,6 +113,7 @@ function ticTacToe(gameArrayIndex) {
 		allFields.forEach((field) => {
 			field.classList.add('disabled');
 		});
+		gameDisplay.tMessage2.classList.remove('d-none');
 		return;
 	}
 	gameDisplay.tMessage.innerText = `${turn ? 'O' : 'X'}, make your move!`;
