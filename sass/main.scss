@@ -1,0 +1,49 @@
+$primary: green;
+
+// Import bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+html,
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	height: 100vh;
+}
+
+.game-message-display {
+	display: flex;
+	text-align: center;
+	margin: 5%;
+	height: 150px;
+}
+
+.game-shell {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: auto;
+}
+
+.disabled {
+	pointer-events: none;
+}
+
+.size-col {
+	height: 50px;
+	width: 50px;
+}
+
+.border-r-b {
+	border-right: 5px solid black;
+	border-bottom: 5px solid black;
+}
+
+.border-b {
+	border-bottom: 5px solid black;
+}
+
+.border-r {
+	border-right: 5px solid black;
+}
