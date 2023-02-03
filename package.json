@@ -1,22 +1,28 @@
 {
-  "name": "tic-tac-toe-rebooted",
-  "version": "1.0.0",
-  "description": "This is my second version of Tic-Tac-Toc, based on the first, but now a bit more object orientated. This is my first attempt to write code with factory functions and IIFEs.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zaffiroblu/tic-tac-toe-rebooted.git"
-  },
-  "author": "Jen Shivel",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zaffiroblu/tic-tac-toe-rebooted/issues"
-  },
-  "homepage": "https://github.com/zaffiroblu/tic-tac-toe-rebooted#readme",
-  "dependencies": {
-    "bootstrap": "^5.2.1"
-  }
+	"name": "tic-tac-toe-rebooted",
+	"version": "1.0.0",
+	"description": "This is my second version of Tic-Tac-Toc, based on the first, but now a bit more object orientated. This is my first attempt to write code with factory functions and IIFEs.",
+	"main": "index.js",
+	"watch": {
+		"test": "{src,test}/*.js"
+	},
+	"scripts": {
+		"test": "tape test/*.js",
+		"watch": "sass --watch sass/main.scss:dist/css/main.min.css"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zaffiroblu/tic-tac-toe-rebooted.git"
+	},
+	"author": "Jen Shivel",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/zaffiroblu/tic-tac-toe-rebooted/issues"
+	},
+	"homepage": "https://github.com/zaffiroblu/tic-tac-toe-rebooted#readme",
+	"dependencies": {
+		"bootstrap": "^5.2.1",
+		"npm-watch": "^0.11.0",
+		"watch": "^1.0.2"
+	}
 }
